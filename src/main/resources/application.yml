@@ -1,3 +1,8 @@
 spring:
   application:
     name: 'task-manager'
+  flyway:
+    enabled: false
+  docker:
+    compose:
+      lifecycle-management: start-only
