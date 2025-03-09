@@ -1,9 +1,10 @@
 services:
   postgres:
     image: 'postgres:latest'
+    restart: always
     environment:
-      - 'POSTGRES_DB=task_manager'
-      - 'POSTGRES_PASSWORD=task_manager'
-      - 'POSTGRES_USER=task_manager'
+      - 'POSTGRES_DB=${DB_NAME:-task_manager}'
+      - 'POSTGRES_PASSWORD=${DB_PASSWORD:-task_manager}'
+      - 'POSTGRES_USER=${DB_USER:-task_manager}'
     ports:
       - '5432:5432'
